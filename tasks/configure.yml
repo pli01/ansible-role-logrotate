@@ -1,0 +1,13 @@
+- name: Create logrotate config hourly
+  copy: src=/etc/cron.daily/logrotate dest=/etc/cron.hourly/logrotate mode=0755 owner="root"
+  notify: restart crond
+
+- name: Create logrotate config files
+  logrotate: name="{{ item.key }}"
+  with_dict: "{{ logrotate_conf_files }}"
+  args:
+    path: "{{ item.value.path }}"
+    options: "{{ item.value.options }}"
+    scripts: "{{ item.value.scripts }}"
+    state: "{{ item.value.state }}"
+  when: logrotate_conf_files

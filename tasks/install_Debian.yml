@@ -1,0 +1,3 @@
+---
+- name: Install logrotate via apt
+  apt: name=logrotate

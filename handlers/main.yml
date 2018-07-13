@@ -1,0 +1,7 @@
+---
+# handlers file for logrotate
+- name: restart crond
+  service:
+    name: "{{ cron_service_name }}"
+    state: restarted
+    enabled: yes

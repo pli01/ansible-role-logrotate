@@ -1,0 +1,3 @@
+---
+- name: Install logrotate via yum
+  yum: name=logrotate

@@ -1,0 +1,14 @@
+---
+# defaults file for logrotate
+logrotate_conf_files: {}
+
+#logrotate_conf_files: {}
+#  rsyslog:
+#    state: present
+#    path:
+#      - /var/log/mail.info
+#      - /var/log/mail.err
+#    options:
+#      - rotate 4
+#    scripts:
+#      postrotate: invoke-rc.d rsyslog rotate > /dev/null
